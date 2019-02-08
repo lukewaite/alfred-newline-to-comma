@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lukewaite.alfred.newline-to-comma</string>
+	<key>connections</key>
+	<dict>
+		<key>7C9559A9-00FE-4319-987B-D01D00D96914</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEC5DA3C-1A16-4DCE-AE53-951AB20D5C14</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BEC5DA3C-1A16-4DCE-AE53-951AB20D5C14</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90D35F08-26EC-430E-81B8-9B841B8E050E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F63D7CFC-860E-4E41-B81E-6FE77D6523BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C9559A9-00FE-4319-987B-D01D00D96914</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Luke Waite</string>
+	<key>description</key>
+	<string>Change newline breaks to comma separated</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Newline to Comma</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>nlc</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Newline to Comma</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F63D7CFC-860E-4E41-B81E-6FE77D6523BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-newline-to-comma "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BEC5DA3C-1A16-4DCE-AE53-951AB20D5C14</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>90D35F08-26EC-430E-81B8-9B841B8E050E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{clipboard:0}</string>
+				<key>variables</key>
+				<dict>
+					<key>clip</key>
+					<string>{clipboard:0}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7C9559A9-00FE-4319-987B-D01D00D96914</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Newline to Comma
+================
+
+This workflow converts newline (\n) separated data
+into (conditionally, if strings) quote-wrapped comma
+separated values.
+
+The idea being you can do a SELECT against a given
+database table, then use the results of a given column
+to quickly run a WHERE x IN () based on the results.
+
+The data is read-in from the clipboard, then replaced
+in the clipboard with the formatted values.</string>
+	<key>uidata</key>
+	<dict>
+		<key>7C9559A9-00FE-4319-987B-D01D00D96914</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>90D35F08-26EC-430E-81B8-9B841B8E050E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>110</integer>
+		</dict>
+		<key>BEC5DA3C-1A16-4DCE-AE53-951AB20D5C14</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>110</integer>
+		</dict>
+		<key>F63D7CFC-860E-4E41-B81E-6FE77D6523BD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>110</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
