@@ -18,6 +18,8 @@ func main() {
 	var buffer bytes.Buffer
 
 	for _, s := range arr {
+		s = strings.TrimRight(s, "\r\n")
+
 		if _, err := strconv.Atoi(s); err == nil {
 			buffer.WriteString(s+",")
 		} else {
